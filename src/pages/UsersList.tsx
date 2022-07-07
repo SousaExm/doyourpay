@@ -18,7 +18,7 @@ export function UsersList () {
                 )
                 }                
             </Flex> 
-            <ModalPayment/>  
+            <ModalPayment/> 
             <ModalPaymentProof/>
         </main>  
     )

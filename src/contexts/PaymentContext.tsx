@@ -14,14 +14,6 @@ interface CardType {
         validCard: boolean | undefined;
 }
 
-// interface TransactionType {
-    
-//     card: CardType | undefined
-//     destination_user_id: number | undefined;
-//     amount: string | undefined;
-  
-// }
-
 interface StatusType {
     loading: boolean,
     response: "aprovada" | "nao aprovada" | undefined;
@@ -63,12 +55,6 @@ export function PaymentContextProvider({children}:ProviderType){
         response: undefined,
     })
 
-    // const transactionData:TransactionType = {
-    //     card: selectedCard,
-    //     destination_user_id: selectedUser?.id,
-    //     amount: amount
-    // }
-
     function processTransaction(){
         setStatus({loading: true, response: undefined})
 
@@ -99,22 +85,7 @@ export function PaymentContextProvider({children}:ProviderType){
             })
             return 
         }
-
-        // fetch("https://crossorigin.me/https://run.mocky.io/v3/533cd5d7-63d3-4488-bf8d-4bb8c751c989", {
-        //     method: 'POST',
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(transactionData)
-        // })
-        // .then( reposnse => reposnse.json())
-        // .then( data => {
-        //     setStatus({loading: false, response: data.status})
-        //     setSelectedCard(undefined)
-        //     setAmount(0)
-        // })
-
-            
+       
         if(selectedCard?.validCard === false){
             setTimeout(() => {
                 setIsOpenModalPayment(false)
@@ -174,3 +145,32 @@ export function PaymentContextProvider({children}:ProviderType){
         </paymentContext.Provider>
     )
 }
+
+
+// const transactionData:TransactionType = {
+//     card: selectedCard,
+//     destination_user_id: selectedUser?.id,
+//     amount: amount
+// }
+
+// fetch("https://crossorigin.me/https://run.mocky.io/v3/533cd5d7-63d3-4488-bf8d-4bb8c751c989", {
+//     method: 'POST',
+//     headers: {
+//         "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(transactionData)
+// })
+// .then( reposnse => reposnse.json())
+// .then( data => {
+//     setStatus({loading: false, response: data.status})
+//     setSelectedCard(undefined)
+//     setAmount(0)
+// })
+
+// interface TransactionType {
+    
+//     card: CardType | undefined
+//     destination_user_id: number | undefined;
+//     amount: string | undefined;
+  
+// }

@@ -21,8 +21,7 @@ export function InputMask({locale, minimumFractionDigits, currency}:InputProps){
     function handleInputForMask(event:React.KeyboardEvent<HTMLInputElement>){
         //Se a tecla precionada for um número ou backspace
         if(event.key.replace(/\D/g, "") !== "" || event.key === "Backspace"){
-            let formatedValue: any = amount.replace(/\D/g,"")  
-            console.log(amount.toString())  
+            let formatedValue: any = amount.replace(/\D/g,"") 
 
             if(event.key === "Backspace"){  
                 formatedValue = formatedValue.slice(0, -1)
