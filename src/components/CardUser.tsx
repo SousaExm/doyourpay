@@ -28,6 +28,8 @@ export function CardUser({user}:CardUserProps){
             align="center"
             p="16px"
             my="8px"
+            maxW={600}
+            w={["95%", "90%", "90%"]}
             borderRadius="xl"
         >   
         <Flex>
