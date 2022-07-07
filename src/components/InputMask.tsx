@@ -41,6 +41,7 @@ export function InputMask({locale, minimumFractionDigits, currency}:InputProps){
     
     return (
         <Input
+        type="tel"
         autoFocus
         onChange={() => setAmount(amount)}
         value={amount}
